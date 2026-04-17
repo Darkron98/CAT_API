@@ -1,0 +1,30 @@
+import 'package:cat_app/src/features/cats/domain/cases/cases.dart';
+import 'package:dio/dio.dart';
+import 'package:get_it/get_it.dart';
+
+import 'src/core/network/api_client.dart';
+import 'src/features/cats/data/cat_api.dart';
+import 'src/features/cats/data/cat_repo.dart';
+import 'src/features/cats/presentation/bloc/cat/cat_bloc.dart';
+
+final sl = GetIt.instance;
+
+Future<void> init() async {
+  // External
+  sl.registerLazySingleton(() => Dio());
+  // Core
+  sl.registerLazySingleton(() => ApiClient(sl()));
+  // Data
+  sl.registerLazySingleton(() => CatApi(sl()));
+  sl.registerLazySingleton(() => CatRepository(sl()));
+  // Domain
+  sl.registerLazySingleton(() => GetCats(sl()));
+  sl.registerLazySingleton(() => GetBreeds(sl()));
+  sl.registerLazySingleton(() => SearchBreeds(sl()));
+  sl.registerLazySingleton(() => AddFavourite(sl()));
+  sl.registerLazySingleton(() => RemoveFavourite(sl()));
+  sl.registerLazySingleton(() => GetFavourites(sl()));
+  sl.registerLazySingleton(() => GetInitData(sl()));
+  // Bloc
+  sl.registerFactory(() => CatBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl()));
+}
