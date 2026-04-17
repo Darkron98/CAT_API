@@ -48,7 +48,11 @@ class _HomeState extends State<Home> {
       child: Scaffold(
         key: const Key('Home'),
         extendBody: true,
-        body: PageView(controller: _pageController, children: pages),
+        body: PageView(
+          physics: const NeverScrollableScrollPhysics(),
+          controller: _pageController,
+          children: pages,
+        ),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
