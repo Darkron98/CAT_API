@@ -46,16 +46,13 @@ class CatList extends StatelessWidget {
             ],
             if (state is BreedsLoaded) ...[
               Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: ListView.separated(
-                    cacheExtent: 1000,
-                    physics: const BouncingScrollPhysics(),
-                    itemCount: state.breeds.length,
-                    separatorBuilder: (_, __) => const SizedBox(height: 10),
-                    itemBuilder: (context, i) => CatCard(
-                      data: state.breeds[i],
-                    ),
+                child: ListView.separated(
+                  cacheExtent: 1000,
+                  physics: const BouncingScrollPhysics(),
+                  itemCount: state.breeds.length,
+                  separatorBuilder: (_, __) => const SizedBox(height: 15),
+                  itemBuilder: (context, i) => CatCard(
+                    data: state.breeds[i],
                   ),
                 ),
               ),

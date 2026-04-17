@@ -1,3 +1,4 @@
+export 'package:cat_app/src/features/cats/presentation/widgets/fav_list.dart';
 export 'package:cat_app/src/features/cats/presentation/widgets/cat_details.dart';
 export 'package:cat_app/src/features/cats/presentation/widgets/pawgress_indicator.dart';
 export 'package:cat_app/src/features/cats/presentation/widgets/custom_text_fielf.dart';

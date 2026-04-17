@@ -1,9 +1,6 @@
-import 'package:cat_app/src/features/cats/presentation/bloc/cat/cat_bloc.dart';
+import 'package:cat_app/src/core/navigation/app_router.dart';
+import 'package:cat_app/src/core/navigation/app_routes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../injection_container.dart';
-import 'features/cats/presentation/pages/pages.dart';
 
 class CatApp extends StatelessWidget {
   const CatApp({super.key});
@@ -12,13 +9,12 @@ class CatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'PAWdex',
+      debugShowCheckedModeBanner: false,
+      title: 'PAW dex',
+      routes: appRouter(),
+      initialRoute: AppRoutes.title,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-      ),
-      home: BlocProvider(
-        create: (context) => sl<CatBloc>()..add(LoadBreeds()),
-        child: const Home(),
       ),
     );
   }

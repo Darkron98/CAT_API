@@ -30,13 +30,16 @@ class CatDetails extends StatelessWidget {
           ),
           children: [
             _item(Icons.map, 'Origin', data.breed.origin),
-            //_item(Icons.pets, 'Temperament', data.breed.temperament),
             _item(Icons.favorite, 'Affection', '${data.breed.affectionLevel}'),
             _item(Icons.flash_on, 'Energy', '${data.breed.energyLevel}'),
             _item(
                 Icons.psychology, 'Intelligence', '${data.breed.intelligence}'),
             _item(Icons.child_friendly, 'Child Friendly',
                 '${data.breed.childFriendly}'),
+            _item(Icons.pets, 'Dog friendly', '${data.breed.dogFriendly}'),
+            _item(Icons.health_and_safety, 'Life span', data.breed.lifeSpan),
+            _item(
+                Icons.landscape, 'Adaptability', '${data.breed.adaptability}'),
           ],
         ));
   }

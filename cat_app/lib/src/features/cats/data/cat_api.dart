@@ -1,4 +1,5 @@
 import 'package:cat_app/src/features/cats/data/model/model.dart';
+import 'package:dio/dio.dart';
 
 import '../../../core/network/api_client.dart';
 import '../../../core/constants/api_constants.dart';
@@ -48,5 +49,32 @@ class CatApi {
     );
 
     return (response.data as List).map((e) => BreedModel.fromJson(e)).toList();
+  }
+
+  Future<int> createFavourite({
+    required String imageId,
+    required String subId,
+  }) async {
+    Response response = await client.post(
+      'v1/favourites',
+      body: {
+        "image_id": imageId,
+        "sub_id": subId,
+      },
+    );
+    return response.data['id'];
+  }
+
+  Future<int?> deleteFavourite(String favouriteId) async {
+    Response resp = await client.del('v1/favourites/$favouriteId');
+    return resp.statusCode;
+  }
+
+  Future<List<FavouriteModel>> getFavourites() async {
+    final response = await client.get('v1/favourites');
+
+    return (response.data as List)
+        .map((e) => FavouriteModel.fromJson(e))
+        .toList();
   }
 }

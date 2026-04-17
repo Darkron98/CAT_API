@@ -1,3 +1,4 @@
+import 'package:cat_app/src/features/cats/domain/cases/cases.dart';
 import 'package:cat_app/src/features/cats/domain/cases/get_breeds.dart';
 import 'package:cat_app/src/features/cats/domain/cases/search_breed.dart';
 import 'package:dio/dio.dart';
@@ -23,6 +24,18 @@ Future<void> init() async {
   sl.registerLazySingleton(() => GetCats(sl()));
   sl.registerLazySingleton(() => GetBreeds(sl()));
   sl.registerLazySingleton(() => SearchBreeds(sl()));
+  sl.registerLazySingleton(() => AddFavourite(sl()));
+  sl.registerLazySingleton(() => RemoveFavourite(sl()));
+  sl.registerLazySingleton(() => GetFavourites(sl()));
+  sl.registerLazySingleton(() => GetInitData(sl()));
   // Bloc
-  sl.registerFactory(() => CatBloc(sl(), sl(), sl()));
+  sl.registerFactory(() => CatBloc(
+        sl(),
+        sl(),
+        sl(),
+        sl(),
+        sl(),
+        sl(),
+        sl(),
+      ));
 }

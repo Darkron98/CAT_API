@@ -47,11 +47,6 @@ class CatDesc extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        const Text(
-          'Description',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 10),
         Text(
           data.breed.description,
           style: const TextStyle(fontSize: 16),

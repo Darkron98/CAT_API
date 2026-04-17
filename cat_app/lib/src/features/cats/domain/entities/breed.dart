@@ -1,4 +1,5 @@
 import 'package:cat_app/src/features/cats/domain/entities/entities.dart';
+import 'package:flutter/material.dart';
 
 class Breed {
   final Weight weight;
@@ -21,6 +22,8 @@ class Breed {
 
   final String? referenceImageId;
 
+  final bool? favourite;
+
   Breed({
     required this.id,
     required this.name,
@@ -37,6 +40,7 @@ class Breed {
     required this.weight,
     this.wikipediaUrl,
     this.referenceImageId,
+    this.favourite,
   });
 }
 
@@ -47,5 +51,15 @@ class BreedWithImage {
   BreedWithImage({
     required this.breed,
     required this.imageUrl,
+  });
+}
+
+class BreedsData {
+  final List<BreedWithImage> breeds;
+  final List<Favourite> favourites;
+
+  BreedsData({
+    required this.breeds,
+    required this.favourites,
   });
 }

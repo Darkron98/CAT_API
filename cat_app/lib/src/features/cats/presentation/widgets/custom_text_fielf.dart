@@ -103,7 +103,7 @@ class CustomFormFieldState extends State<CustomFormField> {
     return Theme(
       data: ThemeData(
         textSelectionTheme: const TextSelectionThemeData(
-            selectionColor: Color.fromARGB(255, 141, 56, 56),
+            selectionColor: ColorPalette.primaryOpacity,
             selectionHandleColor: ColorPalette.primary),
       ),
       child: Padding(

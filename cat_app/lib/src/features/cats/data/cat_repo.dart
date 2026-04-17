@@ -47,4 +47,40 @@ class CatRepository {
     final breeds = await api.searchBreeds(query);
     return _mapBreeds(breeds);
   }
+
+  Future<int> addFavourite(String imageId) async {
+    return await api.createFavourite(
+      imageId: imageId,
+      subId: 'my-user-1234',
+    );
+  }
+
+  Future<int> removeFavourite(String favouriteId) async {
+    return await api.deleteFavourite(favouriteId) ?? 400;
+  }
+
+  Future<List<Favourite>> getFavourites() async {
+    return await api.getFavourites();
+  }
+
+  Future<BreedsData> getInitialData() async {
+    try {
+      final results = await Future.wait([
+        getBreedsWithImages(),
+        api.getFavourites(),
+      ]);
+
+      final breeds = results[0] as List<BreedWithImage>;
+      final favourites = results[1] as List<Favourite>;
+
+      return BreedsData(
+        breeds: breeds,
+        favourites: favourites,
+      );
+    } catch (e) {
+      throw Exception('Error loading initial data');
+    }
+  }
 }
+
+class BreedsLoaded {}

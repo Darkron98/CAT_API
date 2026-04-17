@@ -16,4 +16,12 @@ class ApiClient {
   Future<Response> get(String path, {Map<String, dynamic>? queryParams}) async {
     return await dio.get(path, queryParameters: queryParams);
   }
+
+  Future<Response> post(String path, {Map<String, dynamic>? body}) async {
+    return await dio.post(path, data: body);
+  }
+
+  Future<Response> del(String path) async {
+    return await dio.delete(path);
+  }
 }
