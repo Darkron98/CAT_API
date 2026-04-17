@@ -1,6 +1,26 @@
 import 'package:cat_app/src/features/cats/domain/entities/entities.dart';
 import 'package:flutter/material.dart';
 
+/// ------------------------------------------------------------
+/// Widget: CatDetails
+/// ------------------------------------------------------------
+/// Descripcian:
+/// Caja de informacion que muestra datos estadisiticos de la
+/// raza de gato.
+///
+/// Responsabilidad:
+/// - Renderizar estadisiticas del gato
+///
+/// Parametros:
+/// - data: información del gato (BreedWithImage)
+/// - controller: controller de scroll (ScrollController)
+///
+/// Retorna:
+/// Widget visual tipo grid
+///
+/// Dependencias:
+/// - CatBloc
+/// ------------------------------------------------------------
 class CatDetails extends StatelessWidget {
   const CatDetails({
     super.key,

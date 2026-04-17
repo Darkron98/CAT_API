@@ -6,6 +6,29 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 part 'cat_event.dart';
 part 'cat_state.dart';
 
+/// ------------------------------------------------------------
+/// Bloc: CatBloc
+/// ------------------------------------------------------------
+/// Maneja:
+/// - Lista de razas y favoritos
+///
+/// Responsabilidad:
+/// - Cargar datos iniciales
+/// - Busqueda de razas por query
+/// - Gestionar favoritos (add/remove)
+///
+/// Eventos principales:
+/// - LoadCats
+/// - LoadBreeds
+/// - SearchBreedsEvent
+/// - AddFavouriteEvent
+/// - AddFavouriteEvent
+/// - RemoveFavouriteEvent
+/// - LoadInitialData
+///
+/// Dependencias:
+/// - domain
+/// ------------------------------------------------------------
 class CatBloc extends Bloc<CatEvent, CatState> {
   final GetCats getCats;
   final GetBreeds getBreeds;
@@ -24,6 +47,8 @@ class CatBloc extends Bloc<CatEvent, CatState> {
     this.getFavourites,
     this.getInitData,
   ) : super(CatInitial()) {
+    /// Evento: LoadCats
+    /// Dispara: Carga de imagenes de gatos
     on<LoadCats>((event, emit) async {
       emit(CatLoading());
 
@@ -35,6 +60,8 @@ class CatBloc extends Bloc<CatEvent, CatState> {
       }
     });
 
+    /// Evento: LoadBreeds
+    /// Dispara: Carga de razas de gatos
     on<LoadBreeds>((event, emit) async {
       emit(CatLoading());
 
@@ -46,6 +73,9 @@ class CatBloc extends Bloc<CatEvent, CatState> {
       }
     });
 
+    /// Evento: SearchBreedsEvent
+    /// Dispara: Dispara busqueda de raza de gato
+    /// Params: query (String)
     on<SearchBreedsEvent>(
       (event, emit) async {
         emit(CatLoading());
@@ -63,6 +93,9 @@ class CatBloc extends Bloc<CatEvent, CatState> {
       transformer: debounce(const Duration(milliseconds: 400)),
     );
 
+    /// Evento: AddFavouriteEvent
+    /// Dispara: Dispara creacion de favorito
+    /// Params: imageId (String)
     on<AddFavouriteEvent>((event, emit) async {
       if (state is! BreedsLoaded) return;
 
@@ -86,6 +119,9 @@ class CatBloc extends Bloc<CatEvent, CatState> {
       }
     });
 
+    /// Evento: RemoveFavouriteEvent
+    /// Dispara: Dispara borrar favorito
+    /// Params: favouriteId (String)
     on<RemoveFavouriteEvent>((event, emit) async {
       if (state is! BreedsLoaded) return;
 
@@ -104,6 +140,9 @@ class CatBloc extends Bloc<CatEvent, CatState> {
       }
     });
 
+    /// Evento: RemoveFavouriteEvent
+    /// Dispara: Dispara borrar favorito
+    /// Params: favouriteId (String)
     on<LoadInitialData>((event, emit) async {
       emit(CatLoading());
 

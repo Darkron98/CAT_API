@@ -1,5 +1,20 @@
 import 'package:flutter/material.dart';
 
+/// ------------------------------------------------------------
+/// Widget: PawgressIndicator
+/// ------------------------------------------------------------
+/// Descripcion:
+/// Indicador de progreso animado personalizado
+///
+/// Responsabilidad:
+/// - Renderizar animacion personalizada
+///
+/// Retorna:
+/// Widget visual animado tipo indicador de progreso
+///
+/// Dependencias:
+/// - standalone
+/// ------------------------------------------------------------
 class PawgressIndicator extends StatefulWidget {
   const PawgressIndicator({super.key});
 

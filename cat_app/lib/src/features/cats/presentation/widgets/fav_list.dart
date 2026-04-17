@@ -6,6 +6,23 @@ import 'package:cat_app/src/features/cats/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// ------------------------------------------------------------
+/// Widget: FavList
+/// ------------------------------------------------------------
+/// Descripcion:
+/// Vista de lista de favoritos
+///
+/// Responsabilidad:
+/// - Renderizar la lista de favoritos
+/// - Gestionar favoritos de forma rapida
+/// - Mostrar detalles de favorito
+///
+/// Retorna:
+/// Widget visual tipo Lista (ListView)
+///
+/// Dependencias:
+/// - CatBloc
+/// ------------------------------------------------------------
 class FavList extends StatelessWidget {
   const FavList({
     super.key,

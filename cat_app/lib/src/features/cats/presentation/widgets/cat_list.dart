@@ -4,6 +4,22 @@ import 'package:cat_app/src/features/cats/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// ------------------------------------------------------------
+/// Widget: CatList
+/// ------------------------------------------------------------
+/// Descripcion:
+/// Vista de lista con filtro de busqueda
+///
+/// Responsabilidad:
+/// - Renderizar la lista de cards de razas gatos
+///
+/// Retorna:
+/// Widget visual tipo Lista (ListView)
+/// con filtro de busqueda (TextField)
+///
+/// Dependencias:
+/// - CatBloc
+/// ------------------------------------------------------------
 class CatList extends StatelessWidget {
   const CatList({
     super.key,

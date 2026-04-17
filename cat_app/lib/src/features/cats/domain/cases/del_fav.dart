@@ -1,5 +1,13 @@
 import 'package:cat_app/src/features/cats/data/cat_repo.dart';
 
+/// ------------------------------------------------------------
+/// UseCase: RemoveFavourite
+/// ------------------------------------------------------------
+/// Accion: Borrar favorito
+/// Params: favouriteId (String)
+/// Retorna: int
+/// Dependencias: repository
+/// ------------------------------------------------------------
 class RemoveFavourite {
   final CatRepository repository;
 

@@ -2,6 +2,21 @@ import 'package:cat_app/src/core/utils/style/colors.dart';
 import 'package:cat_app/src/features/cats/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
+/// ------------------------------------------------------------
+/// Widget: Home
+/// ------------------------------------------------------------
+/// Descripcion:
+/// Cuerpo de pagina principal de la aplicacion
+///
+/// Responsabilidad:
+/// - Renderizar cuerpo de pagina principal
+///
+/// Retorna:
+/// Widget visual tipo menu de navegacion
+///
+/// Dependencias:
+/// - standalone
+/// ------------------------------------------------------------
 class Home extends StatefulWidget {
   const Home({super.key});
 

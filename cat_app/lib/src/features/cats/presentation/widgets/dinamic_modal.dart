@@ -1,5 +1,18 @@
 import 'package:flutter/material.dart';
 
+/// ------------------------------------------------------------
+/// Metodo: dinamicModal
+/// ------------------------------------------------------------
+/// Descripción:
+/// Metodo que abre un botton sheet adaptable a su contenido
+///
+/// Parametros:
+/// - body: Cuerpo del bottom sheet (Widget)
+/// - tittle: Titulo del bottom sheet (String)
+///
+/// Proceso:
+/// - Llama showModalBottomSheet
+/// ------------------------------------------------------------
 void dinamicModal(
   BuildContext context, {
   Widget? body,
@@ -17,6 +30,25 @@ void dinamicModal(
   );
 }
 
+/// ------------------------------------------------------------
+/// Widget: ModalContent
+/// ------------------------------------------------------------
+/// Descripcion:
+/// estructura adaptada para ser renderizada en bottom sheets
+///
+/// Responsabilidad:
+/// - Renderizar cuerpo dinamicamente en un bottom sheet
+///
+/// Parametros:
+/// - body: Cuerpo del bottom sheet (Widget)
+/// - tittle: titulo del bottom sheet (String)
+///
+/// Retorna:
+/// Widget estructural
+///
+/// Dependencias:
+/// - standalone
+/// ------------------------------------------------------------
 class ModalContent extends StatefulWidget {
   const ModalContent({
     super.key,

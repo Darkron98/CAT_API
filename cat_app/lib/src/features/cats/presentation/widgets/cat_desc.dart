@@ -5,6 +5,25 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/constants.dart';
 
+/// ------------------------------------------------------------
+/// Widget: CatDesc
+/// ------------------------------------------------------------
+/// Descripción:
+/// Cuerpo que muestra la información detallada de la raza
+/// seleccionada.
+///
+/// Responsabilidad:
+/// - Renderizar datos del gato
+///
+/// Parámetros:
+/// - data: información del gato (BreedWithImage)
+///
+/// Retorna:
+/// Widget visual tipo columna de informacion
+///
+/// Dependencias:
+/// - CatBloc
+/// ------------------------------------------------------------
 class CatDesc extends StatelessWidget {
   CatDesc({
     super.key,

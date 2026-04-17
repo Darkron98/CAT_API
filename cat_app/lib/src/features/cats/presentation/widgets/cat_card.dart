@@ -7,6 +7,27 @@ import 'package:cat_app/src/features/cats/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// ------------------------------------------------------------
+/// Widget: CatCard
+/// ------------------------------------------------------------
+/// Descripcion:
+/// Tarjeta que muestra la información de una raza de gato,
+/// incluyendo imagen y nombre, ademas permite acceder a
+/// informacion detallada del gato.
+///
+/// Responsabilidad:
+/// - Renderizar datos del gato
+/// - Permitir marcar/desmarcar favorito
+///
+/// Parametros:
+/// - data: información del gato (BreedWithImage)
+///
+/// Retorna:
+/// Widget visual tipo card
+///
+/// Dependencias:
+/// - CatBloc
+/// ------------------------------------------------------------
 class CatCard extends StatelessWidget {
   const CatCard({super.key, required this.data});
 

@@ -1,6 +1,21 @@
 import 'package:cat_app/src/core/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 
+/// ------------------------------------------------------------
+/// Widget: TitleView
+/// ------------------------------------------------------------
+/// Descripcion:
+/// Cuerpo de pagina de titulo
+///
+/// Responsabilidad:
+/// - Renderizar cuerpo de pagina de titulo
+///
+/// Retorna:
+/// Widget visual tipo portada
+///
+/// Dependencias:
+/// - standalone
+/// ------------------------------------------------------------
 class TitleView extends StatelessWidget {
   const TitleView({super.key});
 

@@ -3,6 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:remixicon/remixicon.dart';
 
+/// ------------------------------------------------------------
+/// Widget: CustomFormField
+/// ------------------------------------------------------------
+/// Descripcion:
+/// Campo de texto personalizado
+///
+/// Responsabilidad:
+/// - Renderizar campo de texto personalizado
+///
+/// Parametros:
+/// - pass: Bandera para texto oculto tipo password (bool)
+/// - size: parametro de tamaño de pantalla (Size)
+///
+/// Retorna:
+/// Widget visual tipo TextField
+///
+/// Dependencias:
+/// - standalone
+/// ------------------------------------------------------------
 class CustomFormField extends StatefulWidget {
   const CustomFormField(
     BuildContext context, {
